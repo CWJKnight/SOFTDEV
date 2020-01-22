@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Weather Past And Present</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <h:outputStylesheet name="css/style.css"  />
+    </h:head>
+    <h:body>
+        <header>
+            <h1>Weather Past And Present</h1>  
+        </header>
+        <section>
+        <nav>
+             <h:form id="loginForm">
+            
+            <div id="userNameDiv" class="textPlacement">
+                <h:outputLabel value="Email: " /><br></br>
+                <h:inputText value="#{loginBean.userName}" id="email" validatorMessage="Please enter a valid Email address">  
+                <f:validateRegex pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /><!--This validates that the user has entered an email-->  
+                </h:inputText>
+                <h:message for="email"/>
+            </div>
+            <br></br>
+            
+            <div id="passwordDiv" class="textPlacement">
+                <h:outputLabel value="Password:" /><br></br>
+                <h:inputSecret value="#{loginBean.password}" id="pswd" />
+            </div>
+            <!--This creates a button called Login that when clicked triggers
+            the action validateUserLogin which is stored within the loginBean-->
+            <div id="submitBtn" class="textPlacement">
+                <h:commandButton value="Login" action="#{loginBean.validateUserLogin}" styleClass='button' /><!--styleclass set the style for the element, in this case the preset "button"-->
+            </div>    
+        </h:form>
+            <p>Don't have an account? </p><a href="/WeatherWeb/createaccount.xhtml">Register Here</a>
+        </nav>
+        <article>
+            
+        </article>
+    </section>
+    </h:body>
+    <footer>
+        test
+    </footer>
+</html>
+
